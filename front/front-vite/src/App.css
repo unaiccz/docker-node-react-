@@ -1,0 +1,31 @@
+:root{
+display: grid;
+place-items: center;
+background-color: gray;
+}
+.main-container{
+  display: flex;
+  flex-direction: column;
+}
+.titulo{
+  font-family: 'Courier New', Courier, monospace;
+  text-wrap: nowrap;
+  border-radius: 5px;
+  width: 30vh;
+  padding: 5px;
+}
+.navigation{
+  display: flex;
+  justify-content: space-between;
+}
+.icons{
+  margin-top: 8px;
+
+}
+.icons *{
+  margin-right: 30px;
+}
+.cuadricula{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

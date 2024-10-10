@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  node_back:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_back
+    ports:
+      - "8181:8181"
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=011110
+      - DB_NAME=notas
+    networks:
+      - my_network
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=011110
+      - MYSQL_DATABASE=notas
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
